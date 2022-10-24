@@ -64,6 +64,7 @@ const app = createApp({
       .then(response => {
         console.log(response);
         this.siftState(this.todoState);
+
         if(this.todoState === 'todo'){
           swal("切換成功!", "已移到「已完成」", "success");
         }else if(this.todoState === 'done'){
@@ -121,10 +122,11 @@ const app = createApp({
       doneArray.forEach(i=>{
         axios.delete(`${apiUrl}/${i.id}`)
         .then(response => {
-          // console.log(response);
-          // console.log("全部已刪除");
+          console.log(response);
+          console.log("全部已刪除");
           let index = this.siftTodo.findIndex(n => n === i)
           this.siftTodo.splice(index, 1);
+          this.siftState(this.todoState);
           swal("刪除成功!", "已刪除全部已完成項目", "success");
         })
         .catch(error => {
