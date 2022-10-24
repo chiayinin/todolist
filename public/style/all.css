@@ -168,6 +168,7 @@ input[type=text]::placeholder {
   padding: 1rem;
   width: 100%;
   border-bottom: 2px solid #efefef;
+  cursor: pointer;
 }
 .tab li.active {
   border-bottom: 2px solid #333;
@@ -229,6 +230,12 @@ input[type=text]::placeholder {
 .list_footer a {
   color: #9f9a91;
   text-decoration: none;
+  padding: 8px;
+}
+.list_footer a:hover {
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
 }
 @media (max-width: 575px) {
   .list_footer {
@@ -304,6 +311,14 @@ input[type=text]::placeholder {
 }
 .checkbox input:checked ~ span::after {
   opacity: 1;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
 }
 
 /*# sourceMappingURL=all.css.map */

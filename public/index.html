@@ -13,34 +13,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js" integrity="sha512-bHeT+z+n8rh9CKrSrbyfbINxu7gsBmSHlDCb3gUF1BjmjDzKhoKspyB71k0CIRBSjE5IVQiMMVBgCWjF60qsvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="app">
     <h1>TODO LIST</h1>
     <div class="card input">
-      <input type="text" placeholder="請輸入待辦事項" />
-      <a href="#" class="btn_add">+</a>
+      <input type="text" placeholder="請輸入待辦事項" v-model.trim="inputItem" @keyup.enter="addTodo" />
+      <a href="#" class="btn_add" @click="addTodo">+</a>
     </div>
-    <div class="card card_list">
+    <div class="card card_list todo">
       <ul class="tab">
-        <li class="active">全部</li>
-        <li>待完成</li>
-        <li>已完成</li>
+        <li :class="{active:todoState === 'all'}" @click="siftState('all')">全部</li>
+        <li :class="{active:todoState === 'todo'}" @click="siftState('todo')">待完成</li>
+        <li :class="{active:todoState === 'done'}" @click="siftState('done')">已完成</li>
       </ul>
       <div class="cart_content">
         <ul class="list">
-          <li>
+          <li v-for="(item, index) in siftTodo" :key="index">
             <label class="checkbox" for="">
-              <input type="checkbox" />
-              <span>把冰箱發霉的檸檬拿去丟</span>
+              <input type="checkbox"
+              v-model="item.isFinish" :true-value="true"
+              :false-value="false"
+              @click="changeChecked(index)"/>
+              <span>{{ item.todoContent }}</span>
             </label>
-            <a href="#" class="delete"></a>
+            <a href="#" class="delete" @click="deleteTodo(index)"></a>
           </li>
         </ul>
         <div class="list_footer">
-          <p>5 個待完成項目</p>
-          <a href="#">清除已完成項目</a>
+          <p>{{ todoTotal }} 個待完成項目</p>
+          <a href="#" @click="deleteAllDone()">清除已完成項目</a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- sweetAlert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
