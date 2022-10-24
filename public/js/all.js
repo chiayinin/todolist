@@ -123,10 +123,7 @@ const app = createApp({
         axios.delete(`${apiUrl}/${i.id}`)
         .then(response => {
           console.log(response);
-          console.log("全部已刪除");
-          let index = this.siftTodo.findIndex(n => n === i)
-          this.siftTodo.splice(index, 1);
-          this.siftState(this.todoState);
+          this.getTodoLists()
           swal("刪除成功!", "已刪除全部已完成項目", "success");
         })
         .catch(error => {
