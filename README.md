@@ -1,6 +1,7 @@
 # TODO LIST
 ###### tags: `2022 JS直播班`
-[Demo](https://todolist-jsjs.herokuapp.com/)
+[網站 Demo](https://todolist-jsjs.herokuapp.com/)
+[影片 Demo](https://youtu.be/zOEPnRUmVqY)
 
 ## 使用技術
 - Vue.js
