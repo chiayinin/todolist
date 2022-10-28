@@ -1,6 +1,6 @@
 # TODO LIST - Vue 作品
+Vue.js 作品，介接 restful API，透過 JSON Server 做 Todolist API 新增、刪除、修改，並在 Heroku 部署。
 
-###### tags: `2022 JS直播班`
 [網站 Demo](https://todolist-jsjs.herokuapp.com/)
 
 [影片 Demo](https://youtu.be/zOEPnRUmVqY)
