@@ -3,7 +3,7 @@ Vue.js 作品，介接 restful API，透過 JSON Server 做 Todolist API 新增�
 
 [網站 Demo](https://todolist-jsjs.herokuapp.com/)
 
-[影片 Demo](https://youtu.be/zOEPnRUmVqY)
+[影片 Demo](https://youtu.be/BG8GludHsoU)
 
 ## 使用技術
 - Vue.js
